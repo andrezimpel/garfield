@@ -1,5 +1,5 @@
 /* ========================================================================
- * Garfield: garfield.js 0.0.1
+ * Garfield: garfield.js 0.0.4
  * http://www.github.com/andrezimpel/garfield
  * ========================================================================
  * Copyright 2015 Andre Zimpel
