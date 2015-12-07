@@ -1,0 +1,8 @@
+@mixin noscript-fallback {
+  display: none;
+  visibility: hidden;
+}
+@mixin show-image {
+  display: inherit;
+  visibility: visible;
+}

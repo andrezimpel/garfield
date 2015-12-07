@@ -1,0 +1,26 @@
+ {
+  "name": "demography",
+  "version": "0.0.8",
+  "homepage": "https://github.com/andrezimpel/demography",
+  "authors": [
+    "Andre Zimpel <az@yum.de>"
+  ],
+  "description": "demography is a small script to add browser data to the body",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrezimpel/demography.git"
+  },
+  "devDependencies": {
+    "path": "latest",
+    "gulp": "latest",
+    "gulp-uglify": "latest",
+    "gulp-concat": "latest",
+    "gulp-rename": "latest",
+    "gulp-ruby-sass": "latest",
+    "gulp-autoprefixer": "latest"
+  },
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 0.9"
+  }
+}

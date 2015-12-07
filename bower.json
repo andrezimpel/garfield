@@ -1,0 +1,34 @@
+{
+  "name": "Garfield",
+  "description": "Garfield is a super simple jQuery lazy load library for images. It supports srcset and sizes too.",
+  "main": "/dist/js/garfield.js",
+  "authors": [
+    "Andre Zimpel <az@yum.de>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "garfield",
+    "lazy",
+    "load",
+    "srcset",
+    "sizes",
+    "images",
+    "img",
+    "performance"
+  ],
+  "homepage": "https://github.com/andrezimpel/garfield",
+  "moduleType": [
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "scrollMonitor": "~1.0.12"
+  }
+}

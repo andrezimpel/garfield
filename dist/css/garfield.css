@@ -1,0 +1,7 @@
+.garfield {
+  display: none;
+  visibility: hidden; }
+
+.garfielded {
+  display: inherit;
+  visibility: visible; }

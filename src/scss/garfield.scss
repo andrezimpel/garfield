@@ -1,0 +1,11 @@
+@import '_mixins';
+
+// hide images when js disabled
+.garfield {
+  @include noscript-fallback;
+}
+
+// enable images after js load
+.garfielded {
+  @include show-image;
+}
