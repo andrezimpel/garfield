@@ -1,5 +1,5 @@
 /* ========================================================================
- * Garfield: garfield.js 0.0.4
+ * Garfield: garfield.js 0.0.5
  * http://www.github.com/andrezimpel/garfield
  * ========================================================================
  * Copyright 2015 Andre Zimpel
@@ -52,7 +52,9 @@
     var elementWatcher = scrollMonitor.create($element, this.options.offsets);
 
     elementWatcher.enterViewport(function() {
-      that.loadImage();
+      if (that.loaded === false) {
+        that.loadImage();
+      }
     });
   }
 
