@@ -1,14 +1,14 @@
  {
-  "name": "demography",
-  "version": "0.1.1",
-  "homepage": "https://github.com/andrezimpel/demography",
+  "name": "garfield",
+  "version": "0.1.2",
+  "homepage": "https://github.com/andrezimpel/garfield",
   "authors": [
-    "Andre Zimpel <az@yum.de>"
+    "Andre Zimpel <andre@unknownbasics.com>"
   ],
-  "description": "demography is a small script to add browser data to the body",
+  "description": "Garfield is a super simple jQuery lazy load library for images. It supports srcset and sizes too.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/andrezimpel/demography.git"
+    "url": "https://github.com/andrezimpel/garfield.git"
   },
   "devDependencies": {
     "path": "latest",
