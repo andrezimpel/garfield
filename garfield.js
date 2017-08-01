@@ -1,10 +1,11 @@
 /* ========================================================================
- * Garfield: garfield.js 0.0.5
+ * Garfield: garfield.js 0.1.0
  * http://www.github.com/andrezimpel/garfield
  * ========================================================================
- * Copyright 2015 Andre Zimpel
+ * Copyright 2017 Andre Zimpel
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
+
 
 
 +function ($) {
@@ -13,59 +14,53 @@
   // GARFIELD CLASS DEFINITION
   // ======================
 
-  var Garfield = function (element, options) {
+  var Garfield = $.garfield = function (element, options) {
     this.options             = options
     this.$body               = $(document.body)
     this.$element            = $(element)
-    this.loaded           = false
-
-    // sizes
-    if (this.$element.attr('sizes')) {
-      var sizesArr = this.$element.attr('sizes').split(', ');
-      this.sizes = $.map(sizesArr, function(val, i){
-        var regex = new RegExp(/\w*px/)
-        var minWidth = val.split(') ')[0].match(regex)[0]
-        var size = val.split(') ')[1]
-
-        return {min: minWidth, size: size}
-      })
-    }
+    this.loaded              = false
   }
 
-  Garfield.VERSION  = '0.0.1'
+  Garfield.VERSION  = '0.1.0'
 
   Garfield.DEFAULTS = {
     'offsets': {
       top: 200,
       bottom: 200
-    }
+    },
+    dataSrcSetAttribute: 'data-srcset',
+    dataSrcAttribute: 'data-src',
+    unloadedCssClass: 'garfield',
+    loadedCssClass: 'garfielded'
   }
 
   Garfield.prototype.prepare = function () {
+    var options = this.options
     var $element = this.$element
     var that = this
 
     // remove garfield class
-    $element.removeClass('garfield')
+    $element.removeClass(options.unloadedCssClass)
 
     // install watcher
     var elementWatcher = scrollMonitor.create($element, this.options.offsets);
 
     elementWatcher.enterViewport(function() {
       if (that.loaded === false) {
-        that.loadImage();
+        that.loadImage()
       }
     });
   }
 
   Garfield.prototype.loadImage = function () {
+    var options = this.options;
     var $element = this.$element
-    var src = $element.data('src')
-    var srcSet = $element.data('srcset')
+    var src = $element.attr(options.dataSrcAttribute)
+    var srcSet = $element.attr(options.dataSrcSetAttribute)
 
     $element.attr('src', src)
     $element.attr('srcset', srcSet)
-    $element.addClass('garfielded')
+    $element.addClass(options.loadedCssClass)
 
     this.loaded = true
   }
@@ -104,10 +99,11 @@
   // ==============
 
   $(document).ready(function () {
-    $('img[data-behavior="garfield-lasagne"]').each(function(){
+    // add support for data-src & data-srcset
+    $('[' + Garfield.DEFAULTS.dataSrcAttribute + '], [' + Garfield.DEFAULTS.dataSrcSetAttribute + ']').each(function(){
       var $this = $(this)
       Plugin.call($this, $this.data())
-    });
+    })
   })
 
 }(jQuery);
