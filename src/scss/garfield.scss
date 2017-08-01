@@ -1,7 +1,9 @@
 @import '_mixins';
 
 // hide images when js disabled
-.garfield {
+.garfield,
+[data-srcset]:not([srcset]),
+[data-src]:not([src]) {
   @include noscript-fallback;
 }
 

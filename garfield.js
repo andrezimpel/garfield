@@ -1,5 +1,5 @@
 /* ========================================================================
- * Garfield: garfield.js 0.1.0
+ * Garfield: garfield.js 0.1.1
  * http://www.github.com/andrezimpel/garfield
  * ========================================================================
  * Copyright 2017 Andre Zimpel
@@ -21,7 +21,7 @@
     this.loaded              = false
   }
 
-  Garfield.VERSION  = '0.1.0'
+  Garfield.VERSION  = '0.1.1'
 
   Garfield.DEFAULTS = {
     'offsets': {

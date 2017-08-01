@@ -1,4 +1,6 @@
-.garfield {
+.garfield,
+[data-srcset]:not([srcset]),
+[data-src]:not([src]) {
   display: none;
   visibility: hidden; }
 
